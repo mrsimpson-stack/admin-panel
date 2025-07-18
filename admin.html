@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestPro Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="#dashboard" class="active">Dashboard</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#deposits">Deposits</a></li>
+                <li><a href="#withdrawals">Withdrawals</a></li>
+                <li><a href="#investments">Investments</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div id="dashboard" class="tab-content active">
+                <h1>Admin Dashboard</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p id="total-users">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Investments</h3>
+                        <p id="active-investments">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Deposits</h3>
+                        <p id="pending-deposits">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Withdrawals</h3>
+                        <p id="pending-withdrawals">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="users" class="tab-content">
+                <h1>User Management</h1>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table">
+                        <!-- Users will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="deposits" class="tab-content">
+                <h1>Deposit Requests</h1>
+                <div class="filter-options">
+                    <select id="deposit-status-filter">
+                        <option value="all">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Proof</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deposits-table">
+                        <!-- Deposits will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Similar sections for withdrawals and investments -->
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
